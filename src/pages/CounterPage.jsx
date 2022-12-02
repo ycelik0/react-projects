@@ -12,13 +12,13 @@ const CounterPage = () => {
   const increment = () => setCounter(counter + 1);
 
   return (
-    <main className='flex justify-center'>
-      <div className='flex gap-5 items-center mt-[10%]'>
-        <button className='bg-gray-600 text-white text-2xl w-[3rem] h-[3rem] transition-all hover:bg-gray-900' onClick={decrement}>
+    <main className='flex justify-center bg-primary text-white h-full'>
+      <div className='flex gap-5 h-fit mt-[12rem]'>
+        <button className='bg-secondaryLight text-white text-2xl w-[3rem] h-[3rem] transition-all hover:bg-secondary' onClick={decrement}>
           -
         </button>
-        <div variant='h5'>{counter}</div>
-        <button className='bg-gray-600 text-white text-2xl w-[3rem] h-[3rem] transition-all hover:bg-gray-900' onClick={increment}>
+        <div className='flex items-center text-2xl'>{counter}</div>
+        <button className='bg-secondaryLight text-white text-2xl w-[3rem] h-[3rem] transition-all hover:bg-secondary' onClick={increment}>
           +
         </button>
       </div>

@@ -4,6 +4,7 @@ import Homepage from './pages/Homepage'
 import CounterPage from './pages/CounterPage'
 import DatePage from './pages/DatePage'
 import Navbar from './components/Navbar'
+import TodoListPage from './pages/TodoListPage'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route path='/' element={<Homepage />} />
         <Route path='/counter' element={<CounterPage />} />
         <Route path='/date' element={<DatePage />} />
+        <Route path='/todolist' element={<TodoListPage />} />
       </Routes>
     </>
   )

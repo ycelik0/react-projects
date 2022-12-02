@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 const DatePage = () => {
-  const [time, setTime] = useState(Date.now());
+  const [time, setTime] = useState("");
 
   useEffect(() => {
     const interval = setInterval(() => setTime(Date.now()), 1000);
@@ -11,8 +11,8 @@ const DatePage = () => {
   }, []);
   
   return (
-    <main>
-      <Date date={time} />
+    <main className='bg-primary text-white h-full'>
+      <Date />
     </main>
   )
 }
