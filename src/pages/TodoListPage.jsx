@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import TodoForm from '../components/TodoList/TodoForm';
 import Todos from '../components/TodoList/Todos';
+import { v4 as uuidv4 } from "uuid";
 
 const TodoListPage = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState([{key: uuidv4(), todoText: 'Dummy Todo', completed: false}]);
   
   const addTodosHandler = (todo) => {
     setTodos([...todos, todo]);
