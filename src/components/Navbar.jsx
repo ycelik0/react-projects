@@ -1,13 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import CustomLink from './CustomLink'
+import '../assets/react.svg'
 
 const Navbar = () => {
   return (
     <nav className='flex p-3 bg-secondary text-white px-[10rem]'>
       <div className="nav-logo">
         <h1 className='text-3xl'>
-          <Link to="/" className='p-2'>Nav</Link>
+          <Link to="/" className='p-2 flex'>
+            <img src='../assets/react.svg' alt='React'/>
+            Projects
+          </Link>
         </h1>
       </div>
       <ul className='flex items-center text-center ml-5'>

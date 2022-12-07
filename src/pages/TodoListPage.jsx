@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import TodoForm from '../components/TodoList/TodoForm';
 import Todos from '../components/TodoList/Todos';
 
@@ -9,7 +9,7 @@ const TodoListPage = () => {
     setTodos([...todos, todo]);
   }
   return (
-    <main className='flex flex-col bg-primary text-white h-full'>
+    <main className='flex flex-col bg-primary text-white p-5'>
       <TodoForm onSetTodo={addTodosHandler} />
       <Todos todos={todos} />
     </main>

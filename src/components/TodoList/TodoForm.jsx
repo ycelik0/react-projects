@@ -3,22 +3,17 @@ import { v4 as uuidv4 } from "uuid";
 
 const TodoForm = (props) => {
   const [inputValue, setInputValue] = useState('');
-  const [todoStatus, setTodoStatus] = useState('');
+  const [todoStatus, setTodoStatus] = useState(false);
   const [isInputValid, setIsInputValid] = useState(true);
 
   const inputHandler = (event) => {
     setInputValue(event.target.value);
   }
 
-  const buttonHandler = (event) => {
+  const onFormSubmit = (event) => {
     event.preventDefault()
     if (inputValue.trim().length !== 0) {
-      setTodoStatus(false)
-      props.onSetTodo({
-        key: uuidv4(),
-        todoText: inputValue,
-        completed: todoStatus,
-      });
+      props.onSetTodo({key: uuidv4(), todoText: inputValue, completed: todoStatus});
       setInputValue('');
       setTodoStatus('');
       setIsInputValid(true)
@@ -28,9 +23,20 @@ const TodoForm = (props) => {
   }
 
   return (
-    <form className={`self-center my-[5rem] backdrop-blur-xl rounded border-2 border-${isInputValid ? 'secondary' : 'red-600'} shadow shadow-secondary`}>
-      <input type="text" className='px-4 py-3 w-[18rem] bg-transparent outline-none' onChange={inputHandler}/>
-      <button type="submit" className='py-3 px-4 text-2xl transition-all rounded hover:bg-orange-500' onClick={buttonHandler}>+</button>
+    <form 
+    className={`self-center my-[5rem] backdrop-blur-xl rounded border-2 border-${isInputValid ? 'secondary' : 'red-600'} shadow shadow-secondary flex align-middle`}
+    onSubmit={onFormSubmit}
+    >
+      <input 
+      type="text" 
+      className='px-4 py-3 w-[18rem] bg-transparent outline-none' 
+      autoFocus 
+      onChange={inputHandler}
+      placeholder='Enter Todo...'
+      />
+      <button type="submit" className='py-2 px-4 text-2xl transition-all rounded rotate-0 hover:rotate-90 hover:bg-orange-500'>
+      <span className='rotate-0 hover:rotate-90'>+</span>
+      </button>
     </form>
   )
 }
