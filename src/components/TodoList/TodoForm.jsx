@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+  import React, { useState, useEffect } from 'react'
 import { v4 as uuidv4 } from "uuid";
 
 const TodoForm = (props) => {
@@ -10,17 +10,11 @@ const TodoForm = (props) => {
     setInputValue(event.target.value);
   }
   
-  useEffect(() => {
-    console.log(inputValue);
-  }, [])
-  
-
   const onFormSubmit = (event) => {
     event.preventDefault();
     if (inputValue.trim().length !== 0) {
       props.onSetTodo({key: uuidv4(), todoText: inputValue, completed: todoStatus});
       setInputValue('');
-      console.log(inputValue);
       setTodoStatus('');
       setIsInputValid(true);
     } else {

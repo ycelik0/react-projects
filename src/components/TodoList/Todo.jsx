@@ -1,15 +1,6 @@
 import React, { useState } from "react";
 
 const Todo = (props) => {
-  const [todoStatus, setTodoStatus] = useState('');
-
-  const todoHandler = (event) => {
-    event.target.parentElement.classList[0] === 'todo__done'
-      ? setTodoStatus(true)
-      : setTodoStatus(false);
-    console.log(todoStatus);
-  };
-
   return (
     <div
       className={`todo flex justify-between border-2 border-secondaryLight p-3 rounded status-${
@@ -18,7 +9,7 @@ const Todo = (props) => {
     >
       <div className="todo__text flex items-center">{props.todo.todoText}</div>
       <div className="todo__buttons flex gap-x-2">
-        <button className="todo__done align-middle" onClick={todoHandler}>
+        <button className="todo__done align-middle" onClick={todoDoneHandler}>
           <svg
             className="fill-green-500 transition-all hover:fill-green-700 pointer-events-none"
             xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +20,7 @@ const Todo = (props) => {
             <path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"></path>
           </svg>
         </button>
-        <button className="todo__delete align-middle" onClick={todoHandler}>
+        <button className="todo__delete align-middle" onClick={todoDeleteHandler}>
           <svg
             className="fill-red-600 transition-all hover:fill-red-800 pointer-events-none"
             xmlns="http://www.w3.org/2000/svg"
